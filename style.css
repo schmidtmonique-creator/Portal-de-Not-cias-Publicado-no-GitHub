@@ -1,0 +1,249 @@
+/* Reset básico e variáveis globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho - Usando Flexbox */
+.main-header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.logo-container .slogan {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Menu de Navegação - Usando Flexbox */
+.main-nav {
+    background-color: #222;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito Hover nos links */
+.main-nav a:hover {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+/* Banner Principal */
+.hero-banner {
+    background: #000 url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200') no-repeat center center/cover;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+/* Layout com CSS Grid (Main + Sidebar) */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Estilização das Seções e Artigos */
+.news-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #1e3c72;
+    border-bottom: 3px solid #1e3c72;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Grid interna para os 2 artigos de cada seção */
+.articles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Estilo do Card (Artigo) com Bordas Arredondadas e Sombras */
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #222;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Sidebar (Aside) */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.widget {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.widget h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-left: 4px solid #2a5298;
+    padding-left: 10px;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 8px;
+}
+
+.widget ul li:last-child {
+    border-bottom: none;
+}
+
+.widget a {
+    color: #2a5298;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.widget a:hover {
+    color: #1e3c72;
+    text-decoration: underline;
+}
+
+/* Rodapé usando Flexbox */
+.main-footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #444;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #1e3c72;
+}
+
+/* --- RESPONSIVIDADE (Media Queries) --- */
+
+/* Para tablets e computadores pequenos */
+@media (min-width: 768px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 artigos lado a lado */
+    }
+}
+
+/* Para computadores grandes */
+@media (min-width: 1024px) {
+    .layout-grid {
+        grid-template-columns: 3fr 1fr; /* Main ocupa 75% e Aside ocupa 25% */
+    }
+    
+    .main-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        border-top: 1px solid #333;
+    }
+    
+    body > .main-footer {
+        max-width: 100%;
+        padding: 30px 5%;
+    }
+}
